@@ -31,8 +31,8 @@ if __name__ == "__main__":
         # отправка и прием данных канала 0
         tx_data = mb_rtu.request(ad=0x0A, fc=0x03, ar=0x00, lr=2)
         uart_ch0.send(tx_data)
-        logger.info(f"TX data ch_{0}: raw <{(tx_data.hex(" ").upper())}>, mb <{mb_rtu.parcing(tx_data)}>")
+        logger.info(f"TX data ch_{0}: raw <{(tx_data.hex(' ').upper())}>, mb <{mb_rtu.parcing(tx_data)}>")
         time.sleep(0.1)
         rx_data = uart_ch0.read()
-        logger.info(f"RX data ch_{0}: raw <{(rx_data.hex(" ").upper())}>, mb <{mb_rtu.parcing(rx_data)}>")
+        logger.info(f"RX data ch_{0}: raw <{(rx_data.hex(' ').upper())}>, mb <{mb_rtu.parcing(rx_data)}>")
 
